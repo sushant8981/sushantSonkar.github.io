@@ -1,0 +1,1010 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+
+    <title> ProPage</title>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+
+
+      #navbar {
+        background-color: #333; /* Black background color */
+        position: fixed; /* Make it stick/fixed */
+        top: -50px; /* Hide the navbar 50 px outside of the top view */
+        width: 100%; /* Full width */
+        transition: top 0.3s; /* Transition effect when sliding down (and up) */
+      }
+    /* Style the navbar links */
+      #navbar ul li {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 18px;
+        text-decoration: none;
+      }
+      ul li{
+        position: relative;
+        list-style: none;
+        font-size:13px;
+        font-weight:500;
+        color:#777;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        display: inline-flex;
+        transition: 0.5s;
+        border:1px solid rgba(0,0,0,.1);
+      }
+      ul li:hover{
+        color: #fff;
+        cursor: pointer;
+      }
+      ul li:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        height: 50%;
+        background:#000;
+        z-index: -1;
+        transform-origin: right;
+        transform:scaleX(0);
+        transition: transform .5s;
+      }
+      ul li:hover:before{
+        transform-origin: left;
+        transform:scaleX(1);
+        transition: transform .5s;
+      }
+      ul li:after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width:100%;
+        height: 50%;
+        background:#000;
+        z-index:-1;
+        transform-origin:left;
+        transform:scaleX(0);
+        transition: transform .5s;
+      }
+      ul li:hover:after{
+        transform-origin:right;
+        transform:scaleX(1);
+        transition: transform .5s;
+      }
+      ul li:nth-child(3n+1):before,
+      ul li:nth-child(3n+1):after{
+
+        background: #ef5777;
+
+      }
+      ul li:nth-child(3n+2):before,
+      ul li:nth-child(3n+2):after{
+
+        background: #a55eea;
+
+      }
+      ul li:nth-child(3n+3):before,
+      ul li:nth-child(3n+3):after{
+
+        background: #0be881;
+
+      }
+      ul li:nth-child(3n+4):before,
+      ul li:nth-child(3n+4):after{
+
+        background: #ef5777 ;
+
+      }
+      ul li:nth-child(3n+5):before,
+      ul li:nth-child(3n+5):after{
+
+        background:#EEEE0E;
+
+      }
+      ul li:nth-child(3n+6):before,
+      ul li:nth-child(3n+6):after{
+
+        background: #0be881;
+
+      }
+      ul li:nth-child(3n+7):before,
+      ul li:nth-child(3n+7):after{
+
+        background:#a55eea;
+
+      }
+      ul li:nth-child(3n+8):before,
+      ul li:nth-child(3n+8):after{
+
+        background:#ef5777;
+
+      }
+      ul li:nth-child(3n+9):before,
+      ul li:nth-child(3n+9):after{
+
+        background:#EEEE0E;
+
+      }
+      #jumbotron{
+        background:url(back1.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size:cover;
+        background-size: cover;
+        height: 480px;
+      }
+      body{
+        background: none;
+      }
+      h1{
+        margin: 0;
+        padding: 0;
+        font-size: 60px;
+        font-family: 'Jomolhari', serif;
+      }
+      h1 span{
+        display: inline-flex;
+        color:white;
+      }
+      h1 span:nth-child(even){
+        overflow: hidden;
+        transition:ease-in-out .5s;
+        /*border-bottom: 8px solid #a1ff34;*/
+        letter-spacing: -1em;
+      }
+      h1:hover span:nth-child(even){
+        letter-spacing: 0em;
+      }
+      h1:hover span:nth-child(1){
+        transition-delay: .8s;
+      }
+      h1:hover span:nth-child(3){
+        transition-delay: 1.2s;
+      }
+      h1:hover span:nth-child(5){
+        transition-delay: 1.8s;
+      }
+      .container{
+       margin:auto 20%;
+       height: 180px;  
+      }
+
+      #compimg{
+        float: right;
+      }
+      #home{
+        font-weight: bold;
+        font-size: 21px;
+        float: left;
+        margin-left: -190px;
+      }
+
+      #about{
+        font-weight: bold;
+        font-size: 21px;
+        float: left;
+        margin-right: 140px;
+        margin-left: -10px;
+      }
+
+      #service{
+         font-weight: bold;
+        font-size: 21px;
+        float: left;
+        margin-right: 150px;
+        margin-left: -30px;
+      }
+
+      #signup{
+         font-weight: bold;
+        font-size: 21px;
+        float: left;
+        margin-right: 100px;
+        margin-left: -40px;
+      }
+
+      #kmore{
+        margin-top: 1px;
+      }
+
+      input{
+        text-indent: 50px;
+        }
+
+        .facebook{
+          font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+          font-size:30px;
+          margin-left: 150px;
+          color: grey;
+          opacity: .4;
+          float: left;
+        }
+        .google{
+          font-family: OCR A Std, monospace;
+           font-size:30px;
+          margin-left:100px;
+          color: grey;
+          opacity: .4;
+          float: left;
+        }
+        .mit{
+          font-family: Comic Sans MS, Comic Sans, cursive;
+          font-size:30px;
+          margin-left:100px;
+          color: grey;
+          opacity: .4;
+          float: left;
+        }
+        .paypal{
+          font-family: Courier New, monospace;
+          font-size:30px;
+          margin-left:100px;
+          color: grey;
+          opacity: .4;
+          float: left;
+        }
+        .netflix{
+          font-family: Trattatello, fantasy;
+          font-size:30px;
+          margin-left:100px;
+          color: grey;
+          opacity: .4;
+          float: left;
+          margin-right: 75px;
+        }
+        .pg{
+          font-family: Brush Script MT, Brush Script Std, cursive;
+          font-size:30px;
+          color: grey;
+          opacity: .4;
+        }
+        #container-2{
+          margin:auto 3%;
+          height: 400px;
+        }
+        #pservices{
+          font-size: 32px;
+          font-weight: bold;
+          font-family: Comic Sans MS, Comic Sans, cursive;
+        }
+        #logoDesign{
+          background-image:url("laptop.jpg");
+          width:23%;
+          height:320px;
+          background-repeat:no-repeat;
+          background-size:cover;
+          border-radius: 5px;
+          float: left;
+        }
+        #logoDesign:hover{
+          opacity:.5;
+        }
+       #sMedia{
+        background-image:url("insta.jpg");
+          width:23%;
+          height:320px;
+          background-repeat:no-repeat;
+          background-size:cover;
+          border-radius: 5px;
+          margin-left:35px;
+          float: left
+       }
+       #sMedia:hover{
+        opacity: .5;
+       }
+       #vOver{
+        background-image:url("singer.jpg");
+          width:23%;
+          height:320px;
+          background-repeat:no-repeat;
+          background-size:cover;
+          border-radius: 5px;
+          float: left;
+          margin-left:35px;
+       }
+       #vOver:hover{
+         opacity: .5;
+       }
+       #translate{
+        background-image:url("books.jpg");
+          width:23%;
+          height:320px;
+          background-repeat:no-repeat;
+          background-size:cover;
+          border-radius: 5px;
+          margin-left: 980px;
+       }
+       #translate:hover{
+        opacity: .5;
+       }
+       #container-3{
+        margin:auto 3%;
+       }
+       #vidFrame{
+        border-radius: 5px;
+       }
+       #work{
+        font-size: 28px;
+        font-weight: bold;
+       }
+       .verify{
+        width: 22px;
+        margin-right: 8px;
+       }
+       .article{
+        font-size: 18px;
+        font-weight: bold;
+       }
+       .container4{
+        margin: auto 3%;
+       }
+       #icontainer{
+        display: grid;
+        grid-template-columns: auto auto auto auto ;
+        grid-gap: 70px;
+        padding: 20px;
+        }
+       .icon1:hover{
+        border:2px solid green;
+      }
+      #container5{
+        margin: auto 3%;
+      }
+      .card{
+        width: 280px;
+        height: 380px;
+        margin-left: 30px;
+        float: left;
+      }
+      .card:hover{
+        transform: scale(1.1);
+      }
+      #container6{
+        margin:auto 2%;
+        margin-top: 100px;
+      }
+      #secondBack{
+        margin-top: 520px;
+       background:url(sback2.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size:cover;
+      background-size: cover;
+      height: 300px;
+      }
+      #textCont{
+        margin: auto 25%;
+      }
+      #try{
+        font-size: 200%;
+        color: white;
+        font-weight: bold;
+        margin-left: 10px;
+        font-family: Brush Script MT, Brush Script Std, cursive;
+      }
+      #container7{
+        margin:auto 2%;
+      }
+      .content{
+        font-size: 15px;
+        font-weight: bold;
+        font-family:Verdana, sans-serif;
+      }
+      #container8{
+        margin: auto 2%;
+        height: 500px;
+      }
+      .hero-image{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("post.jpg");
+        height: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+      #container12{
+        margin: auto 3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .box{
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background:#000;
+        box-shadow: 0 30px 30px rgba(0,0,0,.5);
+        float: left;
+        margin-right:15px;
+      }
+      .box .imgBx{
+        position: absolute;
+        top:0;
+        left:0;
+      }
+      .box .imgBx img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        transition: .5s;
+      }
+      .box:hover .imgBx img{
+        opacity: 0.9;
+      }
+      .box .content{
+        position: absolute;
+        bottom: 20px;
+        left: 5%;
+        width: 91%;
+        height: 60px;
+        background: black;
+        transition: .5s;
+        overflow:hidden;
+        padding: 15px;
+        box-sizing: border-box; 
+        opacity:.7;
+      }
+      .box:hover .content{
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        color: white;
+      }
+      .box .content h3{
+        margin: 0;
+        padding:2px 2px;
+        font-size:30px;
+        font-family: 'Jomolhari', serif;
+        color: white;
+        opacity: .9
+      }
+      .box .content p{
+        margin: 10px 0 0;
+        padding: 0;
+        opacity: 0;
+        line-height: 1.2em;
+        transition: .5s;
+        text-align:justify;
+        font-size: 18px;
+        font-family: arial;
+        opacity: 1;
+      }
+      .box:hover .content p{
+        opacity: .5;
+        transition-delay: .3s;
+      }
+      #container9{
+        margin: auto 0;
+      }
+      .jumbotron{
+        height:860px;
+      }
+      #privacy{
+        float: left;
+        margin-right: 10px;
+      }
+      #privacy:hover{
+        text-decoration:underline; 
+      }
+      #terms:hover{
+        text-decoration:underline; 
+      }
+      #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        height:520px;
+        }
+      #customers th {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: left;
+        color: black;
+        font-weight: bold;
+        }
+        a{
+          text-decoration: none;
+          color: grey;
+        }
+        a:hover{
+          text-decoration: underline;
+          color: grey;
+        }
+        .sicons{
+          float: left;
+          margin-right:10px;
+        }
+    </style>
+
+  </head>
+  <body>
+
+
+      <div id="navbar">
+        <ul>
+          <li>Graphics Design</li>
+          <li>Digital Marketing</li>
+          <li>Writing & Translation</li>
+          <li>Video & Animation</li>
+          <li>Music & Audio</li>
+          <li>Programming & Tech</li>
+          <li>Buisness</li>
+          <li>Lifestyle</li>
+          <li>Industries</li>
+        </ul>
+      </div>
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="duddle.png" style="height: 45px; width: 235px" ></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><b>Help Center</b><span><img src="https://img.icons8.com/dotty/80/000000/headset.png" style="height:18px"></span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href=#><b>Legal Policies</b><span style="margin-left:2px"><img src="https://img.icons8.com/wired/64/000000/book-stack.png" height="18px"></span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="email" placeholder="email" aria-label="email" style="margin-left:48px">
+      <button class="btn btn-primary my-2 my-sm-0" type="login">log in</button>
+    </form>
+  </div>
+</nav>
+
+
+<div id="jumbotron">
+
+<div class="container">
+
+    <button class="btn btn-info" id ="home">Home</button>
+
+    <button class="btn btn-info" id ="about">About us</button>
+
+    <button class="btn btn-info" id ="service">Our Services</button>
+
+     <button class="btn btn-info" id ="signup">Sign up for free</button>
+  
+    <button class="btn btn-outline-success" id="kmore"><b>Click to know more?</b></button>
+
+    <hr><hr>
+
+    <h1>
+
+      <span>H</span><span>ire</span>
+      <span>F</span><span>reelancers</span>
+      
+    </h1>
+
+    <h1>
+
+      <span>M</span><span>ake</span>
+      <span>T</span><span>hings</span>
+      <span>H</span><span>appen</span>
+
+    </h1>
+
+    <h4 style="color: white">Our community of expert freelancers gives you the power</h4>
+    <h4 style="color: white;padding-bottom: 43px;">to find the right person for any project in minutes.</h4>
+
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Try logo Design" aria-label="search" maxlength="60" size="60">
+      <button class="btn btn-primary my-2 my-sm-0" type="search"><b>Search</b></button>
+    </form>
+
+    <br>
+    <br>
+    
+    <div>
+      
+      <p id="content" style="color: white;font-size: 17px;margin-left: -190px;"><b>Popular:</b>
+      <button class="btn btn-secondary my-2 my-sm-0" style="height:33px;width:83px;margin-left: 15px;padding: 1px;color: skyblue;background-color:green"><b>Voice Over</b></button>
+       <button class="btn btn-secondary my-2 my-sm-0" style="height:33px;width:72px;margin-left: 15px;padding: 1px;color: skyblue;background-color:green"><b>Logo</b></button>
+       <button class="btn btn-secondary my-2 my-sm-0" style="height:33px;width:100px;margin-left: 15px;padding: 1px;color: skyblue;background-color:green"><b>Social Media</b></button>
+       <button class="btn btn-secondary my-2 my-sm-0" style="height:33px;width:100px;margin-left: 15px;padding: 1px;color: skyblue;background-color:green"><b>Translation</b></button>
+       <button class="btn btn-secondary my-2 my-sm-0" style="height:33px;width:100px;margin-left: 15px;padding: 1px;color: skyblue;background-color:green"><b>lllustration</b></button>
+       <button class="btn btn-secondary my-2 my-sm-0" style="height:33px;width:100px;margin-left: 15px;padding: 1px;color: skyblue;background-color:green"><b>Data entry</b></button>
+       <button class="btn btn-secondary my-2 my-sm-0" style="height:33px;width:100px;margin-left: 15px;padding: 1px;color: skyblue;background-color:green"><b>Wordpress</b></button>
+
+   </div>
+
+</div>
+
+</div>
+
+<div>
+
+  <p class="facebook"><b>facebook</b></p>
+   <p class="google"><b>Google</b></p>
+   <p class="mit"><b>MIT</b></p>
+   <p class="paypal"><b>Paypal</b></p>
+   <p class="netflix"><b>Netflix</b></p>
+   <p class="pg"><b>P&G</b></p>
+</div>
+
+<br><br>
+
+<div id="container-2">
+
+<p id="pservices">Popular Professional Services</p>  
+
+<br>
+
+<div id="logoDesign">
+  <p style="font-size: 19px;padding:25px;color: white">Build your brand</p>
+  <p style="font-size: 25px;padding-left:24px;color: white;"><b>Logo Design</b></p>
+</div>
+
+<div  id="sMedia">
+ <p style="font-size: 19px;padding:25px;color: white">Reach more customers</p>
+  <p style="font-size: 25px;padding-left:24px;color: white;"><b>Social Media</b></p>
+</div>
+
+<div  id="vOver">
+ <p style="font-size: 19px;padding:25px;color: white">Share your message</p>
+  <p style="font-size: 25px;padding-left:24px;color: white;"><b>Voice Over</b></p>
+</div>
+
+<div  id="translate">
+ <p style="font-size: 19px;padding:25px;color: white">Go Global</p>
+  <p style="font-size: 25px;padding-left:24px;color: white;"><b>Translation</b></p>
+</div>
+
+</div>
+
+<br>
+<br><br><br><br>
+
+<div id="container-3">
+
+  <div class="jumbo1">
+  <iframe class; allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="480" height="315" src="https://www.youtube.com/embed/Mle9uWRHFb8" style="border: 2px solid grey;float: right;border-radius: 12px;"></iframe>
+</div>
+  
+  <p id="work">Get Work Done Faster on Duddle, With Confidence</p>
+  <br>
+
+  <p><img src="https://img.icons8.com/color/48/000000/verified-account.png" class="verify"><span class="article">Payment protection guaranteed</span></p>
+  <p>Payment is released to the freelancer once you’re pleased and approve the work you get</p>
+
+
+  <p><img src="https://img.icons8.com/color/48/000000/verified-account.png" class="verify"><span class="article">Know The Price Upfront</span></p>
+  <p>Find any service within minutes and know exactly what you’ll pay. No hourly rates, just a fixed price.</p>
+
+  <p><img src="https://img.icons8.com/color/48/000000/verified-account.png" class="verify"><span class="article">We’re Here For You 24/7</span></p>
+  <p>Fiverr is here for you, anything from answering any questions to resolving any issues, at any time.</p>
+
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="container4">
+  
+  <h2 style="margin-bottom: 70px;">Explore The Marketplace</h2>
+
+    <div id="icontainer">
+
+      <figure class="figure">
+        <img src="https://img.icons8.com/cotton/64/000000/marker-pen.png" class="figure-img img-fluid rounded" alt="green" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Graphics Design</a></figcaption>
+      </figure>
+        
+      <figure class="figure">
+        <img src="https://img.icons8.com/dusk/64/000000/marketing.png" class="figure-img img-fluid rounded" alt="green" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Digital Marketing</a></figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="https://img.icons8.com/color/48/000000/video.png" class="figure-img img-fluid rounded" alt="green" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Video and animation</a></figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="https://img.icons8.com/nolan/64/000000/magazine.png" class="figure-img img-fluid rounded" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Writing and Translation</a></figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="https://img.icons8.com/nolan/64/000000/photos-folder.png" class="figure-img img-fluid rounded" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Music and Audio</a></figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="https://img.icons8.com/bubbles/64/000000/programming-flag.png" class="figure-img img-fluid rounded" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Programming and Tech</a></figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="https://img.icons8.com/nolan/64/000000/handshake.png" class="figure-img img-fluid rounded" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Buisness</a></figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="https://img.icons8.com/wired/64/000000/person-at-home.png" class="figure-img img-fluid rounded" style="border-bottom:3px solid green;">
+        <figcaption class="figure-caption"><a href="">Lifestyle</a></figcaption>
+      </figure>
+
+    </div>
+
+</div>
+<br><br><br><br><br>
+
+<div id="container5">
+  
+  <h2>Get Inspired With Projects Made By Our Freelancers</h2>
+
+  <br><br>
+
+  <img src="card1.png" class="card">
+  <img src="card2.png" class="card">
+  <img src="card5.png" class="card">
+  <img src="card4.png" class="card">
+
+</div>
+
+
+<div id="container6">
+  
+  <div id="secondBack">
+
+    <div id="textCont">
+      <p style="color: white;padding-top:25px;font-size: 140%;">Try<span id="try">duddle Pro</span></p>
+      <p style="font-size: 170%;color: white;">Unrivaled experts, trusted by the world's biggest brands</p>
+      <button type="button" class="btn btn-outline-success" style="font-weight: bold;margin-top: 20px;">Explore Pro Services</button>
+    </div>
+  
+  </div>
+
+</div>
+
+<br><br><br><br><br><br>
+
+<div id="container7">
+  
+  <iframe src="https://giphy.com/embed/7ihdqCWmJnDr2" width="480" height="290" class="giphy-embed" allowFullScreen style="float: right;border-radius:18px;margin-top: 15px;"></iframe>
+
+  <h3 style="margin-bottom: 25px;">Give Your Business The Right Tools</h3>
+  <p><img src="https://img.icons8.com/color/48/000000/verified-account.png" class="verify"><span class="content">Full Transparency</span></p>
+  <p style="color: grey;">A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</p>
+
+  <p><img src="https://img.icons8.com/color/48/000000/verified-account.png" class="verify"><span class="content">VIP Customer Support</span></p>
+  <p style="color: grey;">Quick response time and upgraded support solutions will help you to get what you need, when you need it.</p>
+
+  <p><img src="https://img.icons8.com/color/48/000000/verified-account.png" class="verify"><span class="content">Improved Billing Options</span></p>
+  <p style="color: grey;">One team - one payment method. You can now add a card on file that every team member can use.</p>
+
+</div>
+
+<br><br><br><br><br><br><br><br><br>
+
+
+
+<div id="container12">
+      
+      <div class="box">
+        
+        <div class="imgBx">
+          
+          <img src="yellowBoy.jpg" style="width: 300px;height: 400px;">
+
+        </div>
+
+        <div class="content">
+          
+          <h3>Hire In Minutes</h3>
+          <p><b>Duddle connects your business to an international community of freelancers who want nothing more than to help your business succeed. Discover rated and reviewed experts for every skill imaginable — One discovery could change your business forever.</b></p>
+
+        </div>
+
+      </div>
+
+      <div class="box">
+        
+        <div class="imgBx">
+          
+          <img src="phonecollection.jpg" style="width: 300px;height: 400px;">
+
+        </div>
+
+        <div class="content">
+          
+          <h3>Post Projects Quickly,receive responses</h3>
+          <p><b>When you've got a project in mind, post it using our project writing tool. It's programmed to ask all the right questions to help you get your project ready for publishing.Our artificial intelligence system does the hard work — matching and contacting the best freelance talent for your project.</b></p>
+
+        </div>
+
+      </div>
+
+      <div class="box">
+        
+        <div class="imgBx">
+          
+          <img src="phone.jpg" style="width: 300px;height: 400px;">
+
+        </div>
+
+        <div class="content">
+          
+          <h3>Discover Fixed Price Offers.</h3>
+          <p><b>Duddle gives you a unique way to discover services to grow your business. Explore fixed-price offers from as little as £10 — Giving you the freedom to test ideas cost effectively. Once you're happy with the results, request a follow-on project.</b></p>
+
+        </div>
+
+      </div>
+
+      <div class="box">
+        
+        <div class="imgBx">
+          
+          <img src="pen.jpg" style="width: 300px;height: 400px;">
+
+        </div>
+
+        <div class="content">
+          
+          <h3>Trust Our Experts to help grow your business.</h3>
+          <p><b>We carefully check everybody before allowing them onto our platform to guarantee you'll be working with an expert in their field of work.Above all, every freelancer is rated and reviewed by the PeoplePerHour community.</b></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+<br><br><br><br><br><br><br><br><br><br><hr>
+
+<div id="container8">
+  
+  <div class="hero-image">
+    <div class="hero-text">
+      <h3>Find Freelance Services For Your Business Today</h3>
+      <p>We've got you covered for all your business needs</p>
+      <button type="button" class="btn btn-success" style="margin-top: 10px;"><b>Get Started</b></button>
+    </div>
+  </div>
+
+<hr>
+</div>
+
+<div id="container9">
+  
+  <div class="jumbotron">
+    <h1 class="display-8" style="color:grey">duDDLe <sup>&#174</sup></h1>
+    <p id="privacy"><a href="" style="color: grey;font-size:14px;">Privacy Policy</a></p>
+    <p id="terms"><a href="" style="color: grey;font-size:14px;">Terms of Service</a></p>
+    <p style="color: grey;font-size:11px">Duddle International Ltd. 2019</p>
+
+  <table id="customers" class="jumbotron">
+      <tr>
+        <th>Categories</th>
+        <th>About</th>
+        <th>Support</th>
+        <th>Community</th>
+        <th>More from Duddle</th>
+      </tr>
+      <tr>
+        <td><a href="">Graphics Design</a></td>
+        <td><a href="">Carriers</a></td>
+        <td><a href="">Help and support</a></td>
+        <td><a href="">Events</a></td>
+        <td><a href="">Duddle Pro</a></td>
+      </tr>
+      <tr>
+        <td><a href="">Digital Marketing</a></td>
+        <td><a href="">Press and News</a></td>
+        <td><a href="">Trust and safety</a></td>
+        <td><a href="">Blog</a></td>
+        <td><a href="">Duddle Studios</a></td>
+
+      </tr>
+      <tr>
+        <td><a href="">Writing and translations</a></td>
+        <td><a href="">Partnership</a></td>
+        <td><a href="">Selling on Duddle</a></td>
+        <td><a href="">Forum</a></td>
+        <td><a href="">Get inspired</a></td>
+      </tr>
+      <tr>
+        <td><a href="">Video and Animation</a></td>
+        <td><a href="">Privacy Policy</a></td>
+        <td><a href="">Buying on Duddle</a></td>
+        <td><a href="">Podcast</a></td>
+        <td><a href="">Clear Voice</a></td>
+      </tr>
+      <tr>
+        <td><a href="">Music and Audio</a></td>
+        <td></td>
+        <td><a href="">Terms of Service</a></td>
+        <td></td>
+        <td><a href="">Affiliates</a></td>
+      </tr>
+      <tr>
+        <td><a href="">Programming and Tech</a></td>
+        <td><a href="">Intellectual Property Claims</a></td>
+        <td></td>
+        <td><a href="">Invite a friend</a></td>
+        <td><a href="">AND CO </a></td>
+      </tr>
+      <tr>
+        <td><a href="">Buisness</a></td>
+        <td><a href=""></a></td>
+        <td><a href=""></a></td>
+        <td><a href="">Become a Seller</a></td>
+      </tr>
+      <tr>
+        <td><a href="">Lifestyle</a></td>
+        <td><a href="">Duddle.de</a></td>
+        <td><a href=""></a></td>
+        <td><a href=""></a></td>
+        <td><a href="">Learn</a></td>
+      </tr>
+      <tr>
+        <td><a href="">Sitemap</a></td>
+        <td><a href="">Investor Relations</a></td>
+        <td><a href="">Duddle Elevate</a></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <br>
+     <hr>
+
+     <div class="sicons"><a href=""><img src="https://img.icons8.com/cute-clipart/50/000000/twitter.png"></a></div>
+     <div class="sicons"><a href=""><img src="https://img.icons8.com/nolan/50/000000/facebook-new.png"></a></div>
+     <div class="sicons"><a href=""><img src="https://img.icons8.com/dusk/50/000000/instagram-new.png"></a></div>
+     <div class="sicons"><a href=""><img src="https://img.icons8.com/cute-clipart/50/000000/linkedin.png"></a></div>
+
+  </div>
+
+</div>
+
+
+  <script>
+       window.onscroll = function() {scrollFunction()};
+
+       function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-50px";
+          }
+        }
+
+  </script>
+
+    
+  </body>
+</html>
